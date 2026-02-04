@@ -6,14 +6,11 @@ This project implements a preprocessing pipeline for brain MRI scans used in dem
 
 The pipeline handles both medical image volumes (NIfTI format) and CSV-based metadata and produces processed images, visualizations, and cleaned datasets for downstream use.
 
-This work was developed as part of an academic project.
-
----
 
 ## Project Structure
 
 ```
-dementia-mri-project/
+MRI-project-dementia/
 
 data/
     Demographics_MRI.csv
@@ -37,8 +34,6 @@ README.md
 .gitignore
 ```
 
----
-
 ## Functionality
 
 ### MRI Processing
@@ -56,8 +51,6 @@ README.md
 * Merges CSV files
 * Produces a structured dataset for analysis
 
----
-
 ## Requirements
 
 * Python 3.x
@@ -73,23 +66,21 @@ To ensure reproducibility and avoid dependency issues, follow these steps:
 
 1. Create a virtual environment
 
-    ```
-   python3 -m venv venv
-    ```
+```
+python3 -m venv venv
+```
 
 2. Activate the virtual environment
 
-    ```
-    source venv/bin/activate
-    ```
+```
+source venv/bin/activate
+```
 
 3. Install dependencies:
 
 ```
 pip install -r requirements.txt
 ```
-
----
 
 ## Running the Project
 
@@ -101,7 +92,6 @@ python main.py
 
 The pipeline will process the data and save all results inside the `outputs/` directory.
 
----
 
 ## Outputs
 
@@ -113,7 +103,6 @@ The following files are generated:
 
 These outputs are intended for inspection and further modeling.
 
----
 
 ## Sample Outputs
 
@@ -127,7 +116,6 @@ This includes:
 * Binary masks
 * Cleaned metadata CSV
 
----
 
 ## Author
 
