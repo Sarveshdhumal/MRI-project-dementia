@@ -27,7 +27,6 @@ create_clean_csv(
     "outputs/cleaned_metadata.csv"
 )
 
-
 first_scan = os.path.join(included_dir, nii_files[0])
 
 process_subject(first_scan, "outputs/figures")
