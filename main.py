@@ -3,6 +3,9 @@ from src.preprocess_csv import create_clean_csv
 from src.mri_processing import process_subject
 
 
+os.makedirs("outputs/figures", exist_ok=True)
+
+
 included_dir = "MRI_images/Included"
 demo = "data/Demographics_MRI.csv"
 rec = "data/Records_MRI.csv"
@@ -26,6 +29,7 @@ create_clean_csv(
     included_ids,
     "outputs/cleaned_metadata.csv"
 )
+
 
 first_scan = os.path.join(included_dir, nii_files[0])
 
