@@ -35,4 +35,4 @@ first_scan = os.path.join(included_dir, nii_files[0])
 
 process_subject(first_scan, "outputs/figures")
 
-print("✅ Pipeline finished successfully!")
+print("Pipeline finished successfully!")
