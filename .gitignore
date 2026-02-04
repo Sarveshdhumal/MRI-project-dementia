@@ -1,0 +1,4 @@
+MRI_images/
+data/
+*.nii
+*.nii.gz
