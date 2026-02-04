@@ -106,7 +106,7 @@ These outputs are intended for inspection and further modeling.
 
 ## Sample Outputs
 
-You can download all processed outputs here:
+All processed outputs can be downloaded here:
 
 👉 [https://fie.nl.tab.digital/s/qYTBwpAHyi9iRxq](https://fie.nl.tab.digital/s/qYTBwpAHyi9iRxq)
 
