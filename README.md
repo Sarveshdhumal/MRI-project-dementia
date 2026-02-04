@@ -1,1 +1,114 @@
-# MRI-project-dementia
+# Dementia MRI Preprocessing Pipeline
+
+## Overview
+
+This project implements a preprocessing pipeline for brain MRI scans used in dementia-related analysis. The goal is to clean raw MRI data and associated metadata, apply basic preprocessing steps, and generate outputs that are ready for further machine learning or research experiments.
+
+The pipeline handles both medical image volumes (NIfTI format) and CSV-based metadata and produces processed images, visualizations, and cleaned datasets for downstream use.
+
+This work was developed as part of an academic project.
+
+---
+
+## Project Structure
+
+```
+dementia-mri-project/
+
+data/
+    Demographics_MRI.csv
+    Records_MRI.csv
+
+MRI_images/
+    Included/
+    Excluded/
+
+outputs/
+    figures/
+    cleaned_metadata.csv
+
+src/
+    mri_processing.py
+    preprocess_csv.py
+
+main.py
+requirements.txt
+README.md
+.gitignore
+```
+
+---
+
+## Functionality
+
+### MRI Processing
+
+* Loads `.nii` and `.nii.gz` MRI volumes
+* Normalizes image intensities
+* Extracts axial, coronal, and sagittal slices
+* Generates visualizations
+* Creates binary masks
+* Saves results to the outputs folder
+
+### Metadata Processing
+
+* Cleans demographic and record data
+* Merges CSV files
+* Produces a structured dataset for analysis
+
+---
+
+## Requirements
+
+* Python 3.x
+* NumPy
+* Pandas
+* nibabel
+* Matplotlib
+* SciPy
+
+Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## Running the Project
+
+After setup, run:
+
+```
+python main.py
+```
+
+The pipeline will process the data and save all results inside the `outputs/` directory.
+
+---
+
+## Outputs
+
+The following files are generated:
+
+* MRI slice visualizations (PNG)
+* Binary masks (`.nii.gz`)
+* Cleaned metadata (`cleaned_metadata.csv`)
+
+These outputs are intended for inspection and further modeling.
+
+---
+
+## Notes
+
+* MRI files are large and should not be tracked directly in Git
+* Virtual environments and temporary outputs should be ignored
+* Raw data should remain unchanged to ensure reproducibility
+
+---
+
+## Author
+
+Sarvesh Dhumal
+MSc Computer Science
+University of Rostock
