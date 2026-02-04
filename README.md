@@ -99,11 +99,17 @@ These outputs are intended for inspection and further modeling.
 
 ---
 
-## Notes
+## Sample Outputs
 
-* MRI files are large and should not be tracked directly in Git
-* Virtual environments and temporary outputs should be ignored
-* Raw data should remain unchanged to ensure reproducibility
+You can download all processed outputs here:
+
+👉 [https://fie.nl.tab.digital/s/qYTBwpAHyi9iRxq](https://fie.nl.tab.digital/s/qYTBwpAHyi9iRxq)
+
+This includes:
+
+* Processed slice visualizations
+* Binary masks
+* Cleaned metadata CSV
 
 ---
 
