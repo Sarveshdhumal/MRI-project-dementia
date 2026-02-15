@@ -119,7 +119,7 @@ This includes:
 
 ## Assignment Report
 
-Task 1 – Inspection of Excluded Scans
+## Task 1 – Inspection of Excluded Scans
 
 I inspected all MRI scans from both the Included and Excluded folders by loading the NIfTI volumes and visually examining multiple slices from each scan. After comparing the two groups, I found that the scans in the Excluded folder appear to have lower usability for analysis, and their removal seems justified rather than accidental.
 
@@ -137,7 +137,7 @@ Conclusion
 Based on this inspection, excluding these scans seems justified.
 
 
-Task 2 – Why NIfTI instead of DICOM
+## Task 2 – Why NIfTI instead of DICOM
 
 Rather than DICOM, the dataset is supplied in NIfTI format. In actuality, this greatly simplifies preprocessing.
 
@@ -145,7 +145,7 @@ Each slice is usually stored as a separate file in DICOM, which also contains a 
 
 This makes loading, processing, and organizing the MRI data easier when NIfTI is used.
 
-Task 3 – Creation of Cleaned Metadata CSV
+## Task 3 – Creation of Cleaned Metadata CSV
 
 I combined the clinical and demographic CSV files into a single dataset using the MRI_ID as the common identifier in order to get the metadata ready for modeling. After merging, I filtered the dataset to keep only subjects whose MRI scans were in the Included folder and eliminated duplicate columns. This guarantees that each metadata entry matches an MRI volume that is available.
 
@@ -173,7 +173,7 @@ In order to prevent sample loss, missing values were handled carefully. The medi
 
 Only MRI subjects are included in the final, cleaned metadata file, which is prepared for additional preprocessing.
 
-Task 4 – Normalization and Encoding
+## Task 4 – Normalization and Encoding
 
 To make the metadata suitable for machine learning, I first processed the numerical and categorical features separately.
 
@@ -183,7 +183,7 @@ For the categorical variables such as diagnosis, language, and scanner-related s
 
 After applying these steps, the final dataset contained only numerical values and could be directly used as input for machine learning or deep learning models.
 
-Task 5 – Slice Extraction, Intensity Normalization, and Brain Mask
+## Task 5 – Slice Extraction, Intensity Normalization, and Brain Mask
 
 To understand the structure of the MRI volume, I selected one representative slice from each of the three anatomical orientations: axial, sagittal, and coronal. The axial slice shows a horizontal cross-section of the brain, the sagittal slice shows the side profile, and the coronal slice shows a front-to-back view. Viewing the brain from these three directions helps verify that the volume is correctly oriented and that the anatomical structures look consistent.
 
@@ -195,11 +195,11 @@ I visualized both the raw axial slice and the normalized axial slice, as well as
 
 To roughly separate the brain from the background, I created a simple binary brain mask using thresholding. After normalizing the full volume, voxels with intensity greater than a small threshold (for example 0.2) were labeled as brain tissue, and the rest were set to zero. This produces a basic mask that removes air and background while keeping the brain region. Although this approach is simple, it works well for initial preprocessing and visualization.
 
-Task 6 — Saving the 3D binary mask as a NIfTI file
+## Task 6 — Saving the 3D binary mask as a NIfTI file
 
 After generating the binary mask, I saved the full 3D mask volume as a NIfTI file. When saving the mask, I ensured that it kept the same spatial properties as the original MRI scan.
 
-Task 7 — Median filtering and histogram comparison
+## Task 7 — Median filtering and histogram comparison
 
 I used a median filter on one axial slice from an included MRI scan to look into noise reduction. Small intensity spikes or salt-and-pepper-like noise are frequently present in medical images, which can interfere with feature extraction or segmentation.
 
