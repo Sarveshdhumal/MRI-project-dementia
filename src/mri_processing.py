@@ -26,32 +26,32 @@ def process_subject(nifti_path, out_dir):
     img = nib.load(nifti_path)
     data = img.get_fdata()
 
-    # middle slices
+   
     axial = data[:, :, data.shape[2]//2]
     coronal = data[:, data.shape[1]//2, :]
     sagittal = data[data.shape[0]//2, :, :]
 
     axial_n = normalize(axial)
 
-    # save raw vs normalized
+   
     save_slice(axial, "Raw Axial", f"{out_dir}/raw_axial.png")
     save_slice(axial_n, "Normalized Axial", f"{out_dir}/norm_axial.png")
 
     save_slice(coronal, "Coronal", f"{out_dir}/coronal.png")
     save_slice(sagittal, "Sagittal", f"{out_dir}/sagittal.png")
 
-    # ---------- Binary mask ----------
+   
     mask = (normalize(data) > 0.2).astype(np.int16)
     
     mask_img = nib.Nifti1Image(mask, img.affine)
     nib.save(mask_img, f"{out_dir}/binary_mask.nii.gz")
 
-    # ---------- Median filter ----------
+    
     axial_med = median_filter(axial, size=3)
 
     save_slice(axial_med, "Median Filtered", f"{out_dir}/median.png")
 
-    # histogram comparison
+    
     plt.figure()
     plt.hist(axial.flatten(), bins=100, alpha=0.5, label="Raw")
     plt.hist(axial_med.flatten(), bins=100, alpha=0.5, label="Median")
