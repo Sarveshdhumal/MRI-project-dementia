@@ -123,13 +123,13 @@ This includes:
 
 I inspected all MRI scans from both the Included and Excluded folders by loading the NIfTI volumes and visually examining multiple slices from each scan. After comparing the two groups, I found that the scans in the Excluded folder appear to have lower usability for analysis, and their removal seems justified rather than accidental.
 
-## Data_f_0001.nii
+1. Data_f_0001.nii
 This scan shows weaker contrast between different brain tissues. The borders between gray matter, white matter, and fluid are not as clear as in the included scans. Because segmentation depends on clear tissue boundaries, this scan could cause problems during analysis or model training.
 
-## Data_f_0002.nii
+2. Data_f_0002.nii
 This image looks different in overall brightness and intensity compared to the included scans. Such differences can make normalization harder and may confuse a machine learning model, since it expects images with similar intensity ranges.
 
-## Data_f_0003.nii
+3. Data_f_0003.nii
 This scan appears slightly noisier and less sharp than the included images. Some anatomical structures are not as clearly visible, which could affect masking or tissue segmentation. Using noisy images can reduce the quality of the dataset and may negatively impact model performance.
 
 Conclusion
