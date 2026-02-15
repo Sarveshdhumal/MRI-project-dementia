@@ -38,9 +38,9 @@ def process_subject(nifti_path, out_dir):
     save_slice(coronal, "Coronal", f"{out_dir}/coronal.png")
     save_slice(sagittal, "Sagittal", f"{out_dir}/sagittal.png")
 
-    mask = (normalize(data) > 0.2).astype(np.uint8)
+    mask = (normalize(data) > 0.2).astype(np.int16)
 
-    mask_img = nib.Nifti1Image(mask, img.affine, img.header)
+    mask_img = nib.Nifti1Image(mask, img.affine)
     nib.save(mask_img, f"{out_dir}/binary_mask.nii.gz")
 
     axial_med = median_filter(axial, size=3)
