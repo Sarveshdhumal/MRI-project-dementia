@@ -153,21 +153,21 @@ Only relevant columns such as demographic variables (sex, age, education), cogni
 
 The following is an interpretation of a number of the dataset's abbreviations:
 
-MRI_ID: Unique identifier of the MRI scan
+1. MRI_ID: Unique identifier of the MRI scan
 
-MMSE: Mini-Mental State Examination score, a measure of cognitive function
+2. MMSE: Mini-Mental State Examination score, a measure of cognitive function
 
-years_education: Number of years of formal education
+3. years_education: Number of years of formal education
 
-diagnosis: Clinical diagnosis (AD = Alzheimer’s Disease, FTD = Frontotemporal Dementia, CN = Cognitively Normal, MCI = Mild Cognitive Impairment)
+4. diagnosis: Clinical diagnosis (AD = Alzheimer’s Disease, FTD = Frontotemporal Dementia, CN = Cognitively Normal, MCI = Mild Cognitive Impairment)
 
-MRIAcquisitionType: Type of MRI acquisition (e.g., 3D structural scan)
+5. MRIAcquisitionType: Type of MRI acquisition 
 
-MagneticFieldStrength: MRI scanner strength in Tesla (e.g., 1.5T or 3T)
+6. MagneticFieldStrength: MRI scanner strength in Tesla
 
-Language: Subject language code
+7. Language: Subject language code
 
-Handling Missing Data
+## Handling Missing Data
 
 In order to prevent sample loss, missing values were handled carefully. The median value of each column, which is resistant to outliers, was used to fill numerical variables. When categorical variables were absent, they were labeled "Unknown." This reduced bias while maintaining the dataset's accuracy.
 
